@@ -1,23 +1,38 @@
-"use client"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Linkedin,
+  Mail,
+  Send,
+  Menu,
+  ExternalLink,
+  Code,
+  Palette,
+  Layout,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import img from "../components/123.jpg";
+import img2 from "../components/23.png";
+import img3 from "../components/34.png";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Linkedin, Mail, Send, Menu, ExternalLink, Code, Palette, Layout } from "lucide-react"
-import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
-import img from "../components/123.jpg"
-import img2 from "../components/23.png"
-import img3 from "../components/34.png"
+import resumeUrl from "../components/45.pdf";
 
 export default function Portfolio() {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.5 },
-  }
+  };
 
   return (
     <div className="min-h-screen w-full bg-background flex flex-col items-center">
@@ -31,30 +46,47 @@ export default function Portfolio() {
             Gopal Gautam
           </Link>
           <nav className="hidden md:flex gap-6">
-            <Link to="#skills" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Link
+              to="#skills"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
               Skills
             </Link>
-            <Link to="#projects" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Link
+              to="#projects"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
               Projects
             </Link>
-            <Link to="#platforms" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Link
+              to="#platforms"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
               Platforms
             </Link>
-            <Link to="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Link
+              to="#contact"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
               Contact
             </Link>
           </nav>
           <div className="flex items-center gap-4">
-            <Button variant="outline" size="sm" className="hidden md:flex">
-              <ExternalLink className="mr-2 h-4 w-4" />
-              Resume
-            </Button>
+            {/* ✅ Corrected: Use <a> for external links like PDFs */}
+            <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="sm" className="hidden md:flex">
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Resume
+              </Button>
+            </a>
             <Button variant="outline" size="icon" className="md:hidden">
               <Menu className="h-5 w-5" />
             </Button>
           </div>
         </div>
       </header>
+   
+  
 
       <main className="w-full flex flex-col items-center    ">
         {/* Hero Section */}
@@ -68,7 +100,10 @@ export default function Portfolio() {
             >
               <div className="md:w-3/5 space-y-6 text-left">
                 <div className="space-y-2">
-                  <motion.p className="text-lg text-indigo-600 font-medium" {...fadeInUp}>
+                  <motion.p
+                    className="text-lg text-indigo-600 font-medium"
+                    {...fadeInUp}
+                  >
                     Hello, I am a
                   </motion.p>
                   <motion.h1
@@ -77,26 +112,44 @@ export default function Portfolio() {
                   >
                     UI UX Designer
                   </motion.h1>
-                  <motion.div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 my-4" {...fadeInUp} />
-                  <motion.p className="text-xl text-gray-700 max-w-2xl" {...fadeInUp}>
-                    A passionate UI/UX designer with a keen eye for aesthetics and usability. Specializing in creating
-                    intuitive and visually engaging digital experiences, with a strong foundation in user-centered
-                    design principles.
+                  <motion.div
+                    className="w-20 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 my-4"
+                    {...fadeInUp}
+                  />
+                  <motion.p
+                    className="text-xl text-gray-700 max-w-2xl"
+                    {...fadeInUp}
+                  >
+                    A passionate UI/UX designer with a keen eye for aesthetics
+                    and usability. Specializing in creating intuitive and
+                    visually engaging digital experiences, with a strong
+                    foundation in user-centered design principles.
                   </motion.p>
                 </div>
                 <motion.div className="flex gap-4 mt-8" {...fadeInUp}>
                   <Button className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white">
                     View Projects
                   </Button>
-                  <Button variant="outline" className="border-purple-200 hover:border-purple-300">
+                  <Button
+                    variant="outline"
+                    className="border-purple-200 hover:border-purple-300"
+                  >
                     Contact Me
                   </Button>
                 </motion.div>
                 <motion.div className="flex gap-4 mt-4" {...fadeInUp}>
-                  <Button variant="ghost" size="icon" className="rounded-full bg-white shadow-sm hover:bg-gray-100">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="rounded-full bg-white shadow-sm hover:bg-gray-100"
+                  >
                     <Linkedin className="h-5 w-5" />
                   </Button>
-                  <Button variant="ghost" size="icon" className="rounded-full bg-white shadow-sm hover:bg-gray-100">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="rounded-full bg-white shadow-sm hover:bg-gray-100"
+                  >
                     <Mail className="h-5 w-5" />
                   </Button>
                 </motion.div>
@@ -117,7 +170,11 @@ export default function Portfolio() {
                         "linear-gradient(to right, rgba(124, 58, 237, 0.2), rgba(99, 102, 241, 0.2))",
                       ],
                     }}
-                    transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
+                    transition={{
+                      duration: 5,
+                      repeat: Number.POSITIVE_INFINITY,
+                      repeatType: "reverse",
+                    }}
                   ></div>
                   <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl">
                     <img
@@ -146,7 +203,9 @@ export default function Portfolio() {
                 Design Skills
               </h2>
               <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 mx-auto my-4"></div>
-              <p className="text-gray-700 mt-2">Tools & Technologies I work with</p>
+              <p className="text-gray-700 mt-2">
+                Tools & Technologies I work with
+              </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -162,7 +221,8 @@ export default function Portfolio() {
                 </div>
                 <h3 className="text-xl font-semibold mb-4">UI Design</h3>
                 <p className="text-gray-600">
-                  Creating beautiful and intuitive interfaces that users love to interact with.
+                  Creating beautiful and intuitive interfaces that users love to
+                  interact with.
                 </p>
               </motion.div>
 
@@ -177,7 +237,10 @@ export default function Portfolio() {
                   <Layout className="h-8 w-8 text-indigo-600" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4">UX Design</h3>
-                <p className="text-gray-600">Crafting seamless user experiences through research and testing.</p>
+                <p className="text-gray-600">
+                  Crafting seamless user experiences through research and
+                  testing.
+                </p>
               </motion.div>
 
               <motion.div
@@ -191,7 +254,9 @@ export default function Portfolio() {
                   <Code className="h-8 w-8 text-purple-600" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4">Prototyping</h3>
-                <p className="text-gray-600">Building interactive prototypes to validate design decisions.</p>
+                <p className="text-gray-600">
+                  Building interactive prototypes to validate design decisions.
+                </p>
               </motion.div>
             </div>
 
@@ -256,7 +321,10 @@ export default function Portfolio() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-20 w-full bg-gradient-to-r from-purple-50 to-indigo-50">
+        <section
+          id="projects"
+          className="py-20 w-full bg-gradient-to-r from-purple-50 to-indigo-50"
+        >
           <div className="container max-w-6xl mx-auto px-4 space-y-6">
             <motion.div
               className="text-center mb-10"
@@ -291,25 +359,43 @@ export default function Portfolio() {
                       <Button
                         variant="outline"
                         className="text-white border-white hover:bg-white hover:text-purple-600"
-                        onClick={() => window.open("https://www.figma.com/proto/0Kx2z00coaEzTfh86lPtXy/Fashion-store-landings?node-id=1-2&t=N1M2AI31XUygp3ic-1", "_blank")}
+                        onClick={() =>
+                          window.open(
+                            "https://www.figma.com/proto/0Kx2z00coaEzTfh86lPtXy/Fashion-store-landings?node-id=1-2&t=N1M2AI31XUygp3ic-1",
+                            "_blank"
+                          )
+                        }
                       >
                         View Project
                       </Button>
                     </div>
                   </div>
                   <CardHeader className="bg-white">
-                    <CardTitle className="text-purple-700">TinDog - Dating App for Dogs</CardTitle>
-                    <CardDescription className="text-purple-600">React, Tailwind CSS</CardDescription>
+                    <CardTitle className="text-purple-700">
+                      True Venice Tradition
+                    </CardTitle>
+                    <CardDescription className="text-purple-600">
+                      Figma, Sketch
+                    </CardDescription>
                   </CardHeader>
                   <CardContent className="bg-white">
                     <p className="text-gray-700">
-                      A fun and playful dating app interface designed specifically for dog owners to find playdates for
-                      their pets.
+                      The vehicle is pure, flexible, and has no essential
+                      elements; it is as simple as possible. The structure
+                      adapts well, aligning with the arc, and is arranged in
+                      sections. The movement is steady, maintaining balance, and
+                      allowing smooth transitions.{" "}
                     </p>
                     <div className="flex gap-2 mt-4 flex-wrap">
-                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">React</span>
-                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">Tailwind</span>
-                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">UI/UX</span>
+                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">
+                        Figma
+                      </span>
+                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">
+                        Wireframing
+                      </span>
+                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">
+                        UI/UX
+                      </span>
                     </div>
                   </CardContent>
                 </Card>
@@ -333,25 +419,43 @@ export default function Portfolio() {
                       <Button
                         variant="outline"
                         className="text-white border-white hover:bg-white hover:text-purple-600"
-                        onClick={() => window.open("https://www.figma.com/design/PraM2n17bvzw9Cj5Y234pt/Parallax-Effect?node-id=0-1&p=f", "_blank")}
+                        onClick={() =>
+                          window.open(
+                            "https://www.figma.com/design/PraM2n17bvzw9Cj5Y234pt/Parallax-Effect?node-id=0-1&p=f",
+                            "_blank"
+                          )
+                        }
                       >
                         View Project
                       </Button>
                     </div>
                   </div>
                   <CardHeader className="bg-white">
-                    <CardTitle className="text-purple-700">TinDog Landing Page</CardTitle>
-                    <CardDescription className="text-purple-600">HTML, CSS, Bootstrap</CardDescription>
+                    <CardTitle className="text-purple-700">
+                      Skye Project Design
+                    </CardTitle>
+                    <CardDescription className="text-purple-600">
+                      Figma, Adobe XD
+                    </CardDescription>
                   </CardHeader>
                   <CardContent className="bg-white">
                     <p className="text-gray-700">
-                      A modern and responsive landing page for TinDog featuring testimonials, pricing plans, and
-                      download sections.
+                      A modern and responsive landing page for Ticket featuring
+                      testimonials, pricing plans, and special coupons and
+                      modern and responsive landing page for Ticket featuring
+                      testimonials, pricing plans, and special coupons with
+                      special discount offers.
                     </p>
                     <div className="flex gap-2 mt-4 flex-wrap">
-                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">HTML5</span>
-                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">CSS3</span>
-                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">Bootstrap</span>
+                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">
+                        Adobe XD
+                      </span>
+                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">
+                        Prototyping
+                      </span>
+                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">
+                        UI Design
+                      </span>
                     </div>
                   </CardContent>
                 </Card>
@@ -375,25 +479,40 @@ export default function Portfolio() {
                       <Button
                         variant="outline"
                         className="text-white border-white hover:bg-white hover:text-purple-600"
-                        onClick={() => window.open("https://www.figma.com/proto/H8kII9TEDGjjuZl48Er2Ly/Untitled?node-id=16-90&starting-point-node-id=1%3A3&t=oDy9yQJ7zNHfZ82e-1", "_blank")}
+                        onClick={() =>
+                          window.open(
+                            "https://www.figma.com/proto/H8kII9TEDGjjuZl48Er2Ly/Untitled?node-id=16-90&starting-point-node-id=1%3A3&t=oDy9yQJ7zNHfZ82e-1",
+                            "_blank"
+                          )
+                        }
                       >
                         View Project
                       </Button>
                     </div>
                   </div>
                   <CardHeader className="bg-white">
-                    <CardTitle className="text-purple-700">TinDog Admin Dashboard</CardTitle>
-                    <CardDescription className="text-purple-600">React, Material-UI</CardDescription>
+                    <CardTitle className="text-purple-700">
+                      TinDog Admin Dashboard
+                    </CardTitle>
+                    <CardDescription className="text-purple-600">
+                      Sketch, Figma
+                    </CardDescription>
                   </CardHeader>
                   <CardContent className="bg-white">
                     <p className="text-gray-700">
-                      An intuitive admin dashboard for managing user profiles, matches, and analytics for the TinDog
-                      platform.
+                      An intuitive admin dashboard for managing user profiles,
+                      matches, and analytics for the TinDog platform.
                     </p>
                     <div className="flex gap-2 mt-4 flex-wrap">
-                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">React</span>
-                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">MUI</span>
-                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">Charts</span>
+                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">
+                        Sketch
+                      </span>
+                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">
+                        Figma
+                      </span>
+                      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">
+                        UI Components
+                      </span>
                     </div>
                   </CardContent>
                 </Card>
@@ -415,7 +534,9 @@ export default function Portfolio() {
                 Get in Touch
               </h2>
               <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 mx-auto my-4"></div>
-              <p className="text-gray-700 mt-2">Have a question or want to work together?</p>
+              <p className="text-gray-700 mt-2">
+                Have a question or want to work together?
+              </p>
             </motion.div>
 
             <motion.div
@@ -429,7 +550,8 @@ export default function Portfolio() {
                 <CardHeader className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-t-lg">
                   <CardTitle>Send a Message</CardTitle>
                   <CardDescription className="text-purple-100">
-                    Fill out the form below and I'll get back to you as soon as possible.
+                    Fill out the form below and I'll get back to you as soon as
+                    possible.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="bg-white pt-6">
@@ -493,19 +615,28 @@ export default function Portfolio() {
       <footer className="border-t w-full bg-gray-50">
         <div className="container max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-center md:text-left mb-4 md:mb-0">
-            <p className="text-sm text-gray-600">© {new Date().getFullYear()} Gopal Gautam. All rights reserved.</p>
+            <p className="text-sm text-gray-600">
+              © {new Date().getFullYear()} Gopal Gautam. All rights reserved.
+            </p>
           </div>
           <div className="flex gap-4">
-            <Button variant="ghost" size="icon" className="text-gray-600 hover:text-purple-600 hover:bg-purple-50">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-gray-600 hover:text-purple-600 hover:bg-purple-50"
+            >
               <Linkedin className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon" className="text-gray-600 hover:text-purple-600 hover:bg-purple-50">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-gray-600 hover:text-purple-600 hover:bg-purple-50"
+            >
               <Mail className="h-5 w-5" />
             </Button>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
-
